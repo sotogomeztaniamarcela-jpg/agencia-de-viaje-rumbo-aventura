@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rumbo Aventura | Agencia de viajes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+<a class="logo" href="index.html">
+  <svg class="logo-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+  </svg>
+  Rumbo<span>Aventura</span>
+</a>
+    <nav>
+      <a href="#destacados">Destacados</a>
+      <a href="#catalogo">Destinos</a>
+      <a href="#cotizador">Cotizador</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>El viaje que sueñas, a tu medida</h1>
+      <p>Paquetes nacionales e internacionales con asesoría personalizada.</p>
+      <form class="buscador" id="buscador">
+        <input type="search" id="busqueda" placeholder="¿A dónde quieres ir?">
+        <button type="submit">Buscar destino</button>
+      </form>
+    </div>
+  </section>
+
+  <main>
+    <section id="destacados" class="seccion">
+      <h2>Destinos destacados</h2>
+      <div class="grid" id="destacadosGrid"></div>
+    </section>
+
+    <section id="catalogo" class="seccion alt">
+      <h2>Catálogo de destinos</h2>
+      <div class="filtros">
+        <select id="filtroContinente">
+          <option value="todos">Todos los continentes</option>
+          <option>América</option>
+          <option>Europa</option>
+          <option>Asia</option>
+        </select>
+        <select id="filtroPrecio">
+          <option value="todos">Cualquier precio</option>
+          <option value="0-1500000">Hasta $1.500.000</option>
+          <option value="1500000-3500000">$1.500.000 a $3.500.000</option>
+          <option value="3500000-99999999">Más de $3.500.000</option>
+        </select>
+      </div>
+      <p id="sinResultados" class="vacio" hidden>No encontramos destinos con esos filtros.</p>
+      <div class="grid" id="catalogoGrid"></div>
+    </section>
+
+    <section id="cotizador" class="seccion">
+      <h2>Cotiza tu viaje</h2>
+      <div class="cotizador">
+        <form id="formCotizador" novalidate>
+          <label>Destino
+            <select id="cDestino"></select>
+          </label>
+          <label>Número de personas
+            <input type="number" id="cPersonas" min="1" max="20" value="2">
+          </label>
+          <label>Número de noches
+            <input type="number" id="cNoches" min="1" max="30" value="4">
+          </label>
+          <label>Tipo de hotel
+            <select id="cHotel">
+              <option value="economico">Económico</option>
+              <option value="estandar">Estándar</option>
+              <option value="lujo">Lujo</option>
+            </select>
+          </label>
+          <p class="error" id="cError" hidden></p>
+          <button type="submit">Calcular costo</button>
+        </form>
+        <div class="resultado" id="resultado">
+          <p class="vacio">Completa el formulario para ver tu cotización.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion alt">
+      <h2>Asesoría personalizada por WhatsApp</h2>
+      <form class="contacto" id="formContacto" novalidate>
+        <input type="text" id="wNombre" placeholder="Tu nombre">
+        <input type="text" id="wDestino" placeholder="Destino de interés">
+        <textarea id="wMensaje" rows="4" placeholder="Cuéntanos qué necesitas"></textarea>
+        <p class="error" id="wError" hidden></p>
+        <button type="submit">Enviar por WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Rumbo Aventura · Todos los derechos reservados</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
